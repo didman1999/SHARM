@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Complete your booking for tours, excursions, and transfers in Sharm El Sheikh. No advance payment required.">
+  <title>Complete Your Booking — LUNA BLANCA</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230891B2'/%3E%3Cstop offset='100%25' stop-color='%2322D3EE'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='45' fill='url(%23g)'/%3E%3Ctext x='50' y='65' text-anchor='middle' font-size='40' font-weight='bold' fill='white' font-family='Arial'%3ESE%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+  <div class="scroll-progress"></div>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">
+        <img src="image/LOGO.jpeg" class="logo" style="mix-blend-mode: multiply; border-radius: 50%; object-fit: cover; width: 42px; height: 42px;" alt="Luna Blanca">
+        <div class="brand-text"><span class="brand-name" style="color:var(--primary-dark);">LUNA BLANCA</span><span class="brand-tagline" style="color:var(--gray-500);">Discover the Red Sea</span></div>
+      </a>
+      <div class="navbar-menu">
+        <div class="navbar-links">
+          <a href="index.html">Home</a><a href="trips.html">Trips</a><a href="transfers.html">Transfers</a><a href="index.html#contact">Contact</a>
+        </div>
+        <div class="navbar-actions">
+          <div class="lang-switch" style="background:var(--gray-100);border-color:var(--gray-200);"><button class="active" data-lang="en" style="color:var(--gray-500);">EN</button><button data-lang="ar" style="color:var(--gray-500);">عربي</button></div>
+        </div>
+      </div>
+      <button class="navbar-toggle" id="navbarToggle"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <h1 data-lang-en="Complete Your Booking" data-lang-ar="أكمل حجزك">Complete Your Booking</h1>
+    <div class="breadcrumb">
+      <a href="index.html">Home</a><span class="separator">/</span>
+      <a href="trips.html">Trips</a><span class="separator">/</span>
+      <span data-lang-en="Booking" data-lang-ar="الحجز">Booking</span>
+    </div>
+  </div>
+
+  <!-- BOOKING FORM -->
+  <section class="section">
+    <div class="container" style="max-width: 1000px;">
+      <div style="display: grid; grid-template-columns: 1fr 380px; gap: var(--space-8);">
+        <!-- Form -->
+        <div>
+          <!-- Trip Summary -->
+          <div style="background: var(--primary-50); border-radius: var(--radius-xl); padding: var(--space-5); margin-bottom: var(--space-6); display: flex; gap: var(--space-4); align-items: center;">
+            <img src="assets/images/trips/ras-mohammed.png" alt="Ras Mohammed" style="width: 100px; height: 80px; border-radius: var(--radius-lg); object-fit: cover;">
+            <div>
+              <h3 style="font-size: var(--text-lg); margin-bottom: var(--space-1);">Ras Mohammed National Park Snorkeling</h3>
+              <div style="display: flex; gap: var(--space-4); font-size: var(--text-sm); color: var(--gray-500);">
+                <span>📅 Aug 15, 2025</span>
+                <span>👥 2 Adults</span>
+                <span>⏱️ 8 hours</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Progress Steps -->
+          <div style="display: flex; align-items: center; justify-content: center; gap: var(--space-2); margin-bottom: var(--space-8);">
+            <div style="display: flex; align-items: center; gap: var(--space-2);">
+              <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--primary); color: white; display: flex; align-items: center; justify-content: center; font-size: var(--text-sm); font-weight: 700;">1</div>
+              <span style="font-size: var(--text-sm); font-weight: 600; color: var(--primary);" data-lang-en="Your Details" data-lang-ar="بياناتك">Your Details</span>
+            </div>
+            <div style="width: 60px; height: 2px; background: var(--gray-200);"></div>
+            <div style="display: flex; align-items: center; gap: var(--space-2);">
+              <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--gray-200); color: var(--gray-500); display: flex; align-items: center; justify-content: center; font-size: var(--text-sm); font-weight: 700;">2</div>
+              <span style="font-size: var(--text-sm); color: var(--gray-400);" data-lang-en="Confirmation" data-lang-ar="التأكيد">Confirmation</span>
+            </div>
+          </div>
+
+          <form id="bookingForm" action="booking-confirmation.html" method="GET">
+            <!-- Personal Information -->
+            <div style="background: var(--white); border-radius: var(--radius-xl); padding: var(--space-6); box-shadow: var(--shadow-card); margin-bottom: var(--space-6);">
+              <h3 style="font-size: var(--text-xl); margin-bottom: var(--space-5); display: flex; align-items: center; gap: var(--space-2);">
+                <svg width="24" height="24" fill="none" stroke="var(--primary)" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                <span data-lang-en="Personal Information" data-lang-ar="المعلومات الشخصية">Personal Information</span>
+              </h3>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label data-lang-en="Full Name *" data-lang-ar="الاسم الكامل *">Full Name *</label>
+                  <input type="text" class="form-control" placeholder="Enter your full name" required id="fullName">
+                </div>
+                <div class="form-group">
+                  <label data-lang-en="Email Address *" data-lang-ar="البريد الإلكتروني *">Email Address *</label>
+                  <input type="email" class="form-control" placeholder="your@email.com" required id="email">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label data-lang-en="Country *" data-lang-ar="الدولة *">Country *</label>
+                  <select class="form-control" required id="country">
+                    <option value="">Select country</option>
+                    <option value="EG">Egypt</option>
+                    <option value="GB">United Kingdom</option>
+                    <option value="DE">Germany</option>
+                    <option value="FR">France</option>
+                    <option value="IT">Italy</option>
+                    <option value="ES">Spain</option>
+                    <option value="NL">Netherlands</option>
+                    <option value="PL">Poland</option>
+                    <option value="RU">Russia</option>
+                    <option value="UA">Ukraine</option>
+                    <option value="US">United States</option>
+                    <option value="CA">Canada</option>
+                    <option value="AU">Australia</option>
+                    <option value="SA">Saudi Arabia</option>
+                    <option value="AE">UAE</option>
+                    <option value="KW">Kuwait</option>
+                    <option value="QA">Qatar</option>
+                    <option value="JO">Jordan</option>
+                    <option value="LB">Lebanon</option>
+                    <option value="OTHER">Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label data-lang-en="Mobile Number *" data-lang-ar="رقم الموبايل *">Mobile Number *</label>
+                  <input type="tel" class="form-control" placeholder="+20 xxx xxx xxxx" required id="mobile">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label data-lang-en="WhatsApp Number" data-lang-ar="رقم واتساب">WhatsApp Number</label>
+                  <input type="tel" class="form-control" placeholder="Same as mobile or different" id="whatsapp">
+                </div>
+                <div class="form-group">
+                  <label data-lang-en="Preferred Contact Method" data-lang-ar="طريقة التواصل المفضلة">Preferred Contact Method</label>
+                  <select class="form-control" id="contactMethod">
+                    <option value="whatsapp">WhatsApp</option>
+                    <option value="phone">Phone Call</option>
+                    <option value="email">Email</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hotel Information -->
+            <div style="background: var(--white); border-radius: var(--radius-xl); padding: var(--space-6); box-shadow: var(--shadow-card); margin-bottom: var(--space-6);">
+              <h3 style="font-size: var(--text-xl); margin-bottom: var(--space-5); display: flex; align-items: center; gap: var(--space-2);">
+                <svg width="24" height="24" fill="none" stroke="var(--primary)" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                <span data-lang-en="Hotel Information" data-lang-ar="معلومات الفندق">Hotel Information</span>
+              </h3>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label data-lang-en="Hotel Name *" data-lang-ar="اسم الفندق *">Hotel Name *</label>
+                  <input type="text" class="form-control" placeholder="e.g. Hilton Sharks Bay" required id="hotel">
+                </div>
+                <div class="form-group">
+                  <label data-lang-en="Room Number (optional)" data-lang-ar="رقم الغرفة (اختياري)">Room Number (optional)</label>
+                  <input type="text" class="form-control" placeholder="e.g. 205" id="room">
+                </div>
+              </div>
+            </div>
+
+            <!-- Special Requests -->
+            <div style="background: var(--white); border-radius: var(--radius-xl); padding: var(--space-6); box-shadow: var(--shadow-card); margin-bottom: var(--space-6);">
+              <h3 style="font-size: var(--text-xl); margin-bottom: var(--space-5); display: flex; align-items: center; gap: var(--space-2);">
+                <svg width="24" height="24" fill="none" stroke="var(--primary)" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                <span data-lang-en="Special Requests" data-lang-ar="طلبات خاصة">Special Requests</span>
+              </h3>
+
+              <div class="form-group">
+                <label data-lang-en="Any special requests or notes?" data-lang-ar="هل لديك أي طلبات خاصة؟">Any special requests or notes?</label>
+                <textarea class="form-control" rows="4" placeholder="Dietary requirements, accessibility needs, celebrations, etc." id="specialRequests"></textarea>
+              </div>
+            </div>
+
+            <!-- Payment Info -->
+            <div style="background: var(--sand-light); border-radius: var(--radius-xl); padding: var(--space-6); margin-bottom: var(--space-6); border: 2px solid var(--sand);">
+              <div style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4);">
+                <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--sand); display: flex; align-items: center; justify-content: center; font-size: 24px;">💵</div>
+                <div>
+                  <h3 style="font-size: var(--text-lg); margin-bottom: 2px;" data-lang-en="Pay on Arrival" data-lang-ar="الدفع عند الوصول">Pay on Arrival</h3>
+                  <p style="font-size: var(--text-sm); color: var(--gray-500);" data-lang-en="No advance payment required. Pay your guide at the start of the trip." data-lang-ar="لا حاجة للدفع المسبق. ادفع للمرشد في بداية الرحلة.">No advance payment required. Pay your guide at the start of the trip.</p>
+                </div>
+              </div>
+              <div style="display: flex; gap: var(--space-3); flex-wrap: wrap;">
+                <span class="badge badge-primary">💵 USD Cash</span>
+                <span class="badge badge-primary">💶 EUR Cash</span>
+                <span class="badge badge-primary">🇪🇬 EGP Cash</span>
+              </div>
+            </div>
+
+            <!-- Honeypot (spam protection) -->
+            <input type="text" name="website" style="display: none;" tabindex="-1" autocomplete="off">
+
+            <!-- Submit -->
+            <div style="display: flex; gap: var(--space-4); align-items: center; flex-wrap: wrap;">
+              <button type="submit" class="btn btn-accent btn-lg" style="flex: 1; min-width: 200px;">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span data-lang-en="Confirm Booking" data-lang-ar="تأكيد الحجز">Confirm Booking</span>
+              </button>
+              <a href="https://wa.me/201234567890?text=Hi!%20I%20want%20to%20book%20Ras%20Mohammed%20Snorkeling%20for%202%20adults" class="btn btn-whatsapp btn-lg" target="_blank">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+                <span data-lang-en="Book via WhatsApp" data-lang-ar="احجز عبر واتساب">Book via WhatsApp</span>
+              </a>
+            </div>
+
+            <p style="font-size: var(--text-xs); color: var(--gray-400); margin-top: var(--space-4); text-align: center;" data-lang-en="By confirming, you agree to our terms and cancellation policy. Free cancellation up to 24 hours before the trip." data-lang-ar="بتأكيد الحجز، أنت توافق على شروطنا وسياسة الإلغاء. إلغاء مجاني حتى 24 ساعة قبل الرحلة.">By confirming, you agree to our terms and cancellation policy. Free cancellation up to 24 hours before the trip.</p>
+          </form>
+        </div>
+
+        <!-- Booking Summary Sidebar -->
+        <div>
+          <div class="booking-sidebar" style="position: sticky; top: 100px;">
+            <h3 style="font-size: var(--text-lg); margin-bottom: var(--space-5);" data-lang-en="Booking Summary" data-lang-ar="ملخص الحجز">Booking Summary</h3>
+
+            <div style="display: flex; gap: var(--space-3); margin-bottom: var(--space-5); padding-bottom: var(--space-5); border-bottom: 1px solid var(--gray-100);">
+              <img src="assets/images/trips/ras-mohammed.png" alt="" style="width: 80px; height: 60px; border-radius: var(--radius-md); object-fit: cover;">
+              <div>
+                <h4 style="font-size: var(--text-sm); font-weight: 600; margin-bottom: 2px;">Ras Mohammed National Park Snorkeling</h4>
+                <p style="font-size: var(--text-xs); color: var(--gray-400);">Ras Mohammed, South Sinai</p>
+              </div>
+            </div>
+
+            <div style="margin-bottom: var(--space-5);">
+              <div style="display: flex; justify-content: space-between; margin-bottom: var(--space-2); font-size: var(--text-sm);">
+                <span style="color: var(--gray-500);">📅 Date</span>
+                <span style="font-weight: 600;">Aug 15, 2025</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; margin-bottom: var(--space-2); font-size: var(--text-sm);">
+                <span style="color: var(--gray-500);">⏱️ Duration</span>
+                <span style="font-weight: 600;">8 hours</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; margin-bottom: var(--space-2); font-size: var(--text-sm);">
+                <span style="color: var(--gray-500);">🕐 Pickup</span>
+                <span style="font-weight: 600;">8:00 AM</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; margin-bottom: var(--space-2); font-size: var(--text-sm);">
+                <span style="color: var(--gray-500);">📍 Pickup Area</span>
+                <span style="font-weight: 600;">Naama Bay</span>
+              </div>
+            </div>
+
+            <div class="booking-summary">
+              <div class="booking-summary-row">
+                <span>2 × Adults @ $35</span>
+                <span>$70</span>
+              </div>
+              <div class="booking-summary-row" style="color: var(--success);">
+                <span>Discount (20%)</span>
+                <span>-$14</span>
+              </div>
+              <div class="booking-summary-row total">
+                <span data-lang-en="Total" data-lang-ar="الإجمالي">Total</span>
+                <span>$56</span>
+              </div>
+            </div>
+
+            <div style="background: var(--sand-light); border-radius: var(--radius-lg); padding: var(--space-3); text-align: center; font-size: var(--text-sm); color: var(--gray-600);">
+              💵 Pay on arrival
+            </div>
+
+            <div style="margin-top: var(--space-4); padding: var(--space-3); background: #D1FAE5; border-radius: var(--radius-lg); display: flex; align-items: center; gap: var(--space-2); font-size: var(--text-xs); color: #065F46;">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span data-lang-en="Free cancellation up to 24 hours before" data-lang-ar="إلغاء مجاني حتى 24 ساعة قبل الرحلة">Free cancellation up to 24 hours before</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom"><p>&copy; 2025 LUNA BLANCA. All rights reserved.</p></div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/201234567890" class="whatsapp-float" target="_blank"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg></a>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Form validation
+    document.getElementById('bookingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('fullName').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const country = document.getElementById('country').value;
+      const mobile = document.getElementById('mobile').value.trim();
+      const hotel = document.getElementById('hotel').value.trim();
+
+      if (!name || !email || !country || !mobile || !hotel) {
+        showToast('Please fill in all required fields', 'error');
+        return;
+      }
+
+      // Redirect to confirmation
+      window.location.href = 'booking-confirmation.html';
+    });
+  </script>
+</body>
+</html>

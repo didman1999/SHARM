@@ -1,0 +1,208 @@
+/* ============================================================
+   RTL (Right-to-Left) Overrides for Arabic
+   Applied when body has dir="rtl"
+   ============================================================ */
+
+body[dir="rtl"] {
+  font-family: var(--font-arabic);
+  text-align: right;
+}
+
+/* --- Typography --- */
+body[dir="rtl"] h1,
+body[dir="rtl"] h2,
+body[dir="rtl"] h3,
+body[dir="rtl"] h4,
+body[dir="rtl"] h5,
+body[dir="rtl"] h6 {
+  font-family: var(--font-arabic);
+}
+
+body[dir="rtl"] .text-left { text-align: right; }
+body[dir="rtl"] .text-right { text-align: left; }
+
+/* --- Navigation --- */
+body[dir="rtl"] .navbar-links a::after {
+  left: auto;
+  right: 0;
+}
+
+body[dir="rtl"] .navbar-menu {
+  right: auto;
+  left: -100%;
+}
+
+body[dir="rtl"] .navbar-menu.active {
+  left: 0;
+  right: auto;
+}
+
+/* --- Hero --- */
+body[dir="rtl"] .hero-content {
+  text-align: right;
+}
+
+/* --- Cards --- */
+body[dir="rtl"] .trip-card-badge {
+  left: auto;
+  right: var(--space-3);
+}
+
+body[dir="rtl"] .trip-card-wishlist {
+  right: auto;
+  left: var(--space-3);
+}
+
+body[dir="rtl"] .trip-card-price .price-old {
+  margin-left: 0;
+  margin-right: var(--space-2);
+}
+
+/* --- Footer --- */
+body[dir="rtl"] .footer-col ul li a:hover {
+  padding-left: 0;
+  padding-right: var(--space-2);
+}
+
+body[dir="rtl"] .footer-col h4::after {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+/* --- Lists --- */
+body[dir="rtl"] .trip-tab-content ul li {
+  padding-left: 0;
+  padding-right: var(--space-6);
+}
+
+body[dir="rtl"] .trip-tab-content ul li::before {
+  left: auto;
+  right: 0;
+}
+
+/* --- WhatsApp Float --- */
+body[dir="rtl"] .whatsapp-float {
+  right: auto;
+  left: 30px;
+}
+
+body[dir="rtl"] .back-to-top {
+  right: auto;
+  left: 30px;
+}
+
+/* --- Lightbox --- */
+body[dir="rtl"] .lightbox-close {
+  right: auto;
+  left: 20px;
+}
+
+body[dir="rtl"] .lightbox-prev {
+  left: auto;
+  right: 20px;
+}
+
+body[dir="rtl"] .lightbox-next {
+  right: auto;
+  left: 20px;
+}
+
+/* --- Forms --- */
+body[dir="rtl"] .form-control,
+body[dir="rtl"] .search-field select,
+body[dir="rtl"] .search-field input {
+  text-align: right;
+}
+
+/* --- Flexbox direction --- */
+body[dir="rtl"] .hero-buttons,
+body[dir="rtl"] .hero-stats,
+body[dir="rtl"] .trip-card-meta,
+body[dir="rtl"] .trip-card-footer,
+body[dir="rtl"] .trip-card-actions,
+body[dir="rtl"] .trip-info-pills,
+body[dir="rtl"] .contact-cta-buttons,
+body[dir="rtl"] .confirmation-actions,
+body[dir="rtl"] .footer-social,
+body[dir="rtl"] .footer-payments,
+body[dir="rtl"] .footer-bottom,
+body[dir="rtl"] .vehicle-specs,
+body[dir="rtl"] .guest-counter,
+body[dir="rtl"] .filter-option,
+body[dir="rtl"] .trip-card-location,
+body[dir="rtl"] .trip-card-rating,
+body[dir="rtl"] .review-stars,
+body[dir="rtl"] .review-author,
+body[dir="rtl"] .footer-contact-item,
+body[dir="rtl"] .breadcrumb,
+body[dir="rtl"] .navbar-brand,
+body[dir="rtl"] .lang-switch,
+body[dir="rtl"] .faq-question,
+body[dir="rtl"] .booking-summary-row,
+body[dir="rtl"] .booking-sidebar-header,
+body[dir="rtl"] .transfer-type-tabs,
+body[dir="rtl"] .form-radio-group,
+body[dir="rtl"] .results-count,
+body[dir="rtl"] .navbar-actions {
+  direction: rtl;
+}
+
+/* --- Pagination --- */
+body[dir="rtl"] .pagination {
+  direction: rtl;
+}
+
+/* --- Toast --- */
+body[dir="rtl"] .toast {
+  right: auto;
+  left: 20px;
+  transform: translateX(calc(-100% - 30px));
+  border-left: none;
+}
+
+body[dir="rtl"] .toast.show {
+  transform: translateX(0);
+}
+
+body[dir="rtl"] .toast-success { border-right: 4px solid var(--success); }
+body[dir="rtl"] .toast-error { border-right: 4px solid var(--danger); }
+
+/* --- Scroll Progress --- */
+body[dir="rtl"] .scroll-progress {
+  left: auto;
+  right: 0;
+}
+
+/* --- Search Select Arrow --- */
+body[dir="rtl"] .search-field select {
+  background-position: left 12px center;
+}
+
+/* --- Mobile specific RTL --- */
+@media (max-width: 992px) {
+  body[dir="rtl"] .navbar-menu {
+    left: auto;
+    right: -100%;
+  }
+
+  body[dir="rtl"] .navbar-menu.active {
+    right: 0;
+    left: auto;
+  }
+
+  body[dir="rtl"] .hero-stat {
+    text-align: right;
+  }
+}
+
+@media (max-width: 576px) {
+  body[dir="rtl"] .whatsapp-float {
+    left: 15px;
+    right: auto;
+  }
+
+  body[dir="rtl"] .back-to-top {
+    left: 15px;
+    right: auto;
+  }
+}

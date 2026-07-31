@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Your booking is confirmed! View your booking details and confirmation number.">
+  <title>Booking Confirmed! — LUNA BLANCA</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230891B2'/%3E%3Cstop offset='100%25' stop-color='%2322D3EE'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='45' fill='url(%23g)'/%3E%3Ctext x='50' y='65' text-anchor='middle' font-size='40' font-weight='bold' fill='white' font-family='Arial'%3ESE%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <style>
+    .confetti {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      z-index: 100;
+      overflow: hidden;
+    }
+    .confetti-piece {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 2px;
+      top: -20px;
+      animation: confetti-fall 3s ease-in-out forwards;
+    }
+    @keyframes confetti-fall {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+    }
+    .check-animation {
+      animation: checkBounce 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s both;
+    }
+    @keyframes checkBounce {
+      0% { transform: scale(0); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVIGATION -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">
+        <img src="image/LOGO.jpeg" class="logo" style="mix-blend-mode: multiply; border-radius: 50%; object-fit: cover; width: 42px; height: 42px;" alt="Luna Blanca">
+        <div class="brand-text"><span class="brand-name" style="color:var(--primary-dark);">LUNA BLANCA</span><span class="brand-tagline" style="color:var(--gray-500);">Discover the Red Sea</span></div>
+      </a>
+      <div class="navbar-menu">
+        <div class="navbar-links"><a href="index.html">Home</a><a href="trips.html">Trips</a><a href="transfers.html">Transfers</a><a href="index.html#contact">Contact</a></div>
+        <div class="navbar-actions"><div class="lang-switch" style="background:var(--gray-100);border-color:var(--gray-200);"><button class="active" data-lang="en" style="color:var(--gray-500);">EN</button><button data-lang="ar" style="color:var(--gray-500);">عربي</button></div></div>
+      </div>
+      <button class="navbar-toggle" id="navbarToggle"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- CONFETTI -->
+  <div class="confetti" id="confetti"></div>
+
+  <!-- CONFIRMATION -->
+  <section class="section" style="padding-top: 140px;">
+    <div class="container">
+      <div class="confirmation-card" style="animation: fadeInUp 0.8s ease;">
+        <!-- Header -->
+        <div class="confirmation-header">
+          <div class="confirmation-check check-animation">
+            <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h1 data-lang-en="Booking Confirmed!" data-lang-ar="تم تأكيد الحجز!">Booking Confirmed!</h1>
+          <p data-lang-en="Thank you! Your booking has been received. We'll contact you shortly to confirm the details." data-lang-ar="شكراً لك! تم استلام حجزك. سنتواصل معك قريباً لتأكيد التفاصيل.">Thank you! Your booking has been received. We'll contact you shortly to confirm the details.</p>
+          <div class="booking-number">SH-20250815-4729</div>
+        </div>
+
+        <!-- Body -->
+        <div class="confirmation-body">
+          <!-- Booking Details -->
+          <div class="confirmation-details">
+            <div class="confirmation-detail">
+              <label data-lang-en="Trip" data-lang-ar="الرحلة">Trip</label>
+              <p>Ras Mohammed National Park Snorkeling</p>
+            </div>
+            <div class="confirmation-detail">
+              <label data-lang-en="Date" data-lang-ar="التاريخ">Date</label>
+              <p>August 15, 2025</p>
+            </div>
+            <div class="confirmation-detail">
+              <label data-lang-en="Guests" data-lang-ar="الضيوف">Guests</label>
+              <p>2 Adults</p>
+            </div>
+            <div class="confirmation-detail">
+              <label data-lang-en="Pickup" data-lang-ar="التوصيل">Pickup</label>
+              <p>8:00 AM — Naama Bay</p>
+            </div>
+            <div class="confirmation-detail">
+              <label data-lang-en="Guest Name" data-lang-ar="اسم الضيف">Guest Name</label>
+              <p>James Smith</p>
+            </div>
+            <div class="confirmation-detail">
+              <label data-lang-en="Hotel" data-lang-ar="الفندق">Hotel</label>
+              <p>Hilton Sharks Bay Resort</p>
+            </div>
+            <div class="confirmation-detail">
+              <label data-lang-en="Total Price" data-lang-ar="السعر الإجمالي">Total Price</label>
+              <p style="color: var(--primary-dark); font-size: var(--text-xl);">$56</p>
+            </div>
+            <div class="confirmation-detail">
+              <label data-lang-en="Payment" data-lang-ar="الدفع">Payment</label>
+              <p>💵 Pay on Arrival</p>
+            </div>
+          </div>
+
+          <!-- Status Tracker -->
+          <div style="background: var(--gray-50); border-radius: var(--radius-xl); padding: var(--space-6); margin-bottom: var(--space-6);">
+            <h3 style="font-size: var(--text-base); margin-bottom: var(--space-4);" data-lang-en="Booking Status" data-lang-ar="حالة الحجز">Booking Status</h3>
+            <div style="display: flex; align-items: center; gap: var(--space-2);">
+              <div style="display: flex; flex-direction: column; align-items: center; flex: 1;">
+                <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--success); display: flex; align-items: center; justify-content: center;">
+                  <svg width="18" height="18" fill="none" stroke="white" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <span style="font-size: var(--text-xs); margin-top: var(--space-1); color: var(--success); font-weight: 600;">Received</span>
+              </div>
+              <div style="flex: 1; height: 3px; background: var(--gray-200); border-radius: 2px;"></div>
+              <div style="display: flex; flex-direction: column; align-items: center; flex: 1;">
+                <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--gray-200); display: flex; align-items: center; justify-content: center;">
+                  <svg width="18" height="18" fill="none" stroke="var(--gray-400)" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3"/></svg>
+                </div>
+                <span style="font-size: var(--text-xs); margin-top: var(--space-1); color: var(--gray-400);">Contacted</span>
+              </div>
+              <div style="flex: 1; height: 3px; background: var(--gray-200); border-radius: 2px;"></div>
+              <div style="display: flex; flex-direction: column; align-items: center; flex: 1;">
+                <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--gray-200); display: flex; align-items: center; justify-content: center;">
+                  <svg width="18" height="18" fill="none" stroke="var(--gray-400)" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                </div>
+                <span style="font-size: var(--text-xs); margin-top: var(--space-1); color: var(--gray-400);">Confirmed</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Important Info -->
+          <div style="background: #FEF3C7; border-radius: var(--radius-lg); padding: var(--space-4); margin-bottom: var(--space-6); display: flex; gap: var(--space-3);">
+            <span style="font-size: 24px;">📋</span>
+            <div style="font-size: var(--text-sm); color: #92400E;">
+              <strong data-lang-en="Important:" data-lang-ar="هام:">Important:</strong>
+              <span data-lang-en=" Please save your booking number. You'll need it to check your booking status or contact us about changes." data-lang-ar=" يرجى حفظ رقم حجزك. ستحتاجه لتتبع حالة حجزك أو التواصل معنا بخصوص أي تعديلات."> Please save your booking number. You'll need it to check your booking status or contact us about changes.</span>
+            </div>
+          </div>
+
+          <!-- Actions -->
+          <div class="confirmation-actions">
+            <a href="https://wa.me/201234567890?text=Hi!%20My%20booking%20number%20is%20SH-20250815-4729.%20I%20booked%20Ras%20Mohammed%20Snorkeling%20for%202%20adults%20on%20Aug%2015.%20Total:%20$56." class="btn btn-whatsapp" target="_blank">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+              <span data-lang-en="Confirm on WhatsApp" data-lang-ar="تأكيد عبر واتساب">Confirm on WhatsApp</span>
+            </a>
+            <button class="btn btn-outline-primary" onclick="window.print()">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+              <span data-lang-en="Print" data-lang-ar="طباعة">Print</span>
+            </button>
+            <a href="check-booking.html" class="btn btn-outline-primary">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              <span data-lang-en="Check Status" data-lang-ar="تتبع الحجز">Check Status</span>
+            </a>
+          </div>
+
+          <div class="text-center" style="margin-top: var(--space-8);">
+            <a href="trips.html" class="btn btn-primary btn-lg" data-lang-en="Explore More Trips →" data-lang-ar="استكشف رحلات أخرى →">Explore More Trips →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer"><div class="container"><div class="footer-bottom"><p>&copy; 2025 LUNA BLANCA. All rights reserved.</p></div></div></footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Confetti animation
+    function createConfetti() {
+      const container = document.getElementById('confetti');
+      const colors = ['#0891B2', '#22D3EE', '#F97316', '#FF6B6B', '#10B981', '#FBBF24', '#F4E8C1'];
+      for (let i = 0; i < 60; i++) {
+        const piece = document.createElement('div');
+        piece.className = 'confetti-piece';
+        piece.style.left = Math.random() * 100 + '%';
+        piece.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        piece.style.animationDelay = Math.random() * 2 + 's';
+        piece.style.animationDuration = (2 + Math.random() * 2) + 's';
+        piece.style.width = (5 + Math.random() * 10) + 'px';
+        piece.style.height = (5 + Math.random() * 10) + 'px';
+        container.appendChild(piece);
+      }
+      setTimeout(() => container.remove(), 5000);
+    }
+    createConfetti();
+  </script>
+</body>
+</html>

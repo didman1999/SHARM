@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse all tours and excursions in Sharm El Sheikh. Filter by category, price, duration, and more. Book your perfect Red Sea adventure today!">
+  <title>All Trips & Excursions — LUNA BLANCA</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230891B2'/%3E%3Cstop offset='100%25' stop-color='%2322D3EE'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='45' fill='url(%23g)'/%3E%3Ctext x='50' y='65' text-anchor='middle' font-size='40' font-weight='bold' fill='white' font-family='Arial'%3ESE%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+  <div class="scroll-progress"></div>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">
+        <img src="image/LOGO.jpeg" class="logo" style="mix-blend-mode: multiply; border-radius: 50%; object-fit: cover; width: 42px; height: 42px;" alt="Luna Blanca">
+        <div class="brand-text">
+          <span class="brand-name" style="color: var(--primary-dark);">LUNA BLANCA</span>
+          <span class="brand-tagline" style="color: var(--gray-500);">Discover the Red Sea</span>
+        </div>
+      </a>
+      <div class="navbar-menu" id="navbarMenu">
+        <div class="navbar-links">
+          <a href="index.html">Home</a>
+          <a href="trips.html" class="active">Trips</a>
+          <a href="transfers.html">Transfers</a>
+          <a href="index.html#categories">Categories</a>
+          <a href="index.html#gallery">Gallery</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+        <div class="navbar-actions">
+          <div class="lang-switch" style="background: var(--gray-100); border-color: var(--gray-200);">
+            <button class="active" data-lang="en" style="color: var(--gray-500);">EN</button>
+            <button data-lang="ar" style="color: var(--gray-500);">عربي</button>
+          </div>
+          <a href="trip.html#book" class="navbar-cta">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Book Now
+          </a>
+        </div>
+      </div>
+      <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <h1 data-lang-en="All Trips & Excursions" data-lang-ar="كل الرحلات والأنشطة">All Trips & Excursions</h1>
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <span data-lang-en="Trips" data-lang-ar="الرحلات">Trips</span>
+    </div>
+  </div>
+
+  <!-- TRIPS LISTING -->
+  <section class="section">
+    <div class="container">
+      <div class="trips-layout">
+        <!-- Filters Sidebar -->
+        <aside class="filters-sidebar" id="filtersSidebar">
+          <div class="filter-group">
+            <h3 data-lang-en="Categories" data-lang-ar="التصنيفات">Categories</h3>
+            <div class="filter-option"><input type="checkbox" id="cat-sea"><label for="cat-sea">Sea Trips</label><span class="count">12</span></div>
+            <div class="filter-option"><input type="checkbox" id="cat-diving"><label for="cat-diving">Diving & Snorkeling</label><span class="count">8</span></div>
+            <div class="filter-option"><input type="checkbox" id="cat-desert"><label for="cat-desert">Desert Safari</label><span class="count">6</span></div>
+            <div class="filter-option"><input type="checkbox" id="cat-water"><label for="cat-water">Water Sports</label><span class="count">5</span></div>
+            <div class="filter-option"><input type="checkbox" id="cat-ras"><label for="cat-ras">Ras Mohammed</label><span class="count">4</span></div>
+            <div class="filter-option"><input type="checkbox" id="cat-tiran"><label for="cat-tiran">Tiran Island</label><span class="count">3</span></div>
+            <div class="filter-option"><input type="checkbox" id="cat-dahab"><label for="cat-dahab">Dahab Trips</label><span class="count">3</span></div>
+            <div class="filter-option"><input type="checkbox" id="cat-sinai"><label for="cat-sinai">Mount Sinai</label><span class="count">2</span></div>
+            <div class="filter-option"><input type="checkbox" id="cat-luxury"><label for="cat-luxury">Luxury</label><span class="count">4</span></div>
+          </div>
+
+          <div class="filter-group">
+            <h3 data-lang-en="Price Range" data-lang-ar="نطاق السعر">Price Range</h3>
+            <input type="range" min="0" max="500" value="500" style="width: 100%; accent-color: var(--primary);">
+            <div class="price-range-labels"><span>$0</span><span>$500</span></div>
+          </div>
+
+          <div class="filter-group">
+            <h3 data-lang-en="Duration" data-lang-ar="المدة">Duration</h3>
+            <div class="filter-option"><input type="checkbox" id="dur-half"><label for="dur-half">Half Day (≤4 hrs)</label></div>
+            <div class="filter-option"><input type="checkbox" id="dur-full"><label for="dur-full">Full Day (5-8 hrs)</label></div>
+            <div class="filter-option"><input type="checkbox" id="dur-multi"><label for="dur-multi">Multi-Day</label></div>
+          </div>
+
+          <div class="filter-group">
+            <h3 data-lang-en="Trip Type" data-lang-ar="نوع الرحلة">Trip Type</h3>
+            <div class="filter-option"><input type="checkbox" id="type-group"><label for="type-group">Group</label></div>
+            <div class="filter-option"><input type="checkbox" id="type-private"><label for="type-private">Private</label></div>
+          </div>
+
+          <div class="filter-group">
+            <h3 data-lang-en="Rating" data-lang-ar="التقييم">Rating</h3>
+            <div class="filter-option"><input type="checkbox" id="rate-5"><label for="rate-5">⭐⭐⭐⭐⭐ 5.0</label></div>
+            <div class="filter-option"><input type="checkbox" id="rate-4"><label for="rate-4">⭐⭐⭐⭐ 4.0+</label></div>
+            <div class="filter-option"><input type="checkbox" id="rate-3"><label for="rate-3">⭐⭐⭐ 3.0+</label></div>
+          </div>
+
+          <div class="filter-group">
+            <h3 data-lang-en="More Filters" data-lang-ar="فلاتر إضافية">More Filters</h3>
+            <div class="filter-option"><input type="checkbox" id="family-friendly"><label for="family-friendly">👨‍👩‍👧‍👦 Family Friendly</label></div>
+            <div class="filter-option"><input type="checkbox" id="has-discount"><label for="has-discount">🔥 Has Discount</label></div>
+          </div>
+
+          <button class="btn btn-primary btn-block" style="margin-top: var(--space-4);" data-lang-en="Apply Filters" data-lang-ar="تطبيق الفلاتر">Apply Filters</button>
+        </aside>
+
+        <!-- Results -->
+        <div class="trips-results">
+          <!-- Mobile filter button -->
+          <button class="btn btn-outline-primary btn-block mobile-filter-btn" style="display:none;" data-lang-en="🔍 Filter Trips" data-lang-ar="🔍 فلترة الرحلات">🔍 Filter Trips</button>
+
+          <div class="trips-results-header">
+            <p class="results-count"><strong>20</strong> <span data-lang-en="trips found" data-lang-ar="رحلة">trips found</span></p>
+            <select class="sort-select" id="sortSelect">
+              <option value="popular">Most Popular</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="rating">Highest Rated</option>
+              <option value="newest">Newest</option>
+            </select>
+          </div>
+
+          <div class="trips-grid">
+            <!-- Card 1 -->
+            <div class="trip-card">
+              <div class="trip-card-image"><img src="assets/images/trips/ras-mohammed.png" alt="Ras Mohammed" loading="lazy"><span class="trip-card-badge">-20%</span></div>
+              <div class="trip-card-body">
+                <div class="trip-card-location"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Ras Mohammed</span></div>
+                <h3>Ras Mohammed National Park Snorkeling</h3>
+                <div class="trip-card-meta"><div class="trip-card-meta-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>8 hrs</span></div><div class="trip-card-meta-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg><span>Group</span></div></div>
+                <div class="trip-card-footer"><div class="trip-card-price"><span class="price-label">From</span><span class="price-value">$35 <span class="price-old">$45</span></span></div><div class="trip-card-rating"><div class="stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><span class="rating-text">4.9</span></div></div>
+                <div class="trip-card-actions"><a href="trip.html" class="btn btn-outline-primary btn-sm">View Details</a><a href="trip.html#book" class="btn btn-primary btn-sm">Book Now</a></div>
+              </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="trip-card">
+              <div class="trip-card-image"><img src="assets/images/trips/tiran-island.png" alt="Tiran Island" loading="lazy"></div>
+              <div class="trip-card-body">
+                <div class="trip-card-location"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Tiran Island</span></div>
+                <h3>Tiran Island Boat Trip with Snorkeling</h3>
+                <div class="trip-card-meta"><div class="trip-card-meta-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>7 hrs</span></div><div class="trip-card-meta-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg><span>Group</span></div></div>
+                <div class="trip-card-footer"><div class="trip-card-price"><span class="price-label">From</span><span class="price-value">$25</span></div><div class="trip-card-rating"><div class="stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><span class="rating-text">4.8</span></div></div>
+                <div class="trip-card-actions"><a href="trip.html" class="btn btn-outline-primary btn-sm">View Details</a><a href="trip.html#book" class="btn btn-primary btn-sm">Book Now</a></div>
+              </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="trip-card">
+              <div class="trip-card-image"><img src="assets/images/trips/desert-safari.png" alt="Desert Safari" loading="lazy"><span class="trip-card-badge">Popular</span></div>
+              <div class="trip-card-body">
+                <div class="trip-card-location"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Sinai Desert</span></div>
+                <h3>Quad Bike Desert Safari Adventure</h3>
+                <div class="trip-card-meta"><div class="trip-card-meta-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>5 hrs</span></div><div class="trip-card-meta-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg><span>Group</span></div></div>
+                <div class="trip-card-footer"><div class="trip-card-price"><span class="price-label">From</span><span class="price-value">$30</span></div><div class="trip-card-rating"><div class="stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><span class="rating-text">4.7</span></div></div>
+                <div class="trip-card-actions"><a href="trip.html" class="btn btn-outline-primary btn-sm">View Details</a><a href="trip.html#book" class="btn btn-primary btn-sm">Book Now</a></div>
+              </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="trip-card">
+              <div class="trip-card-image"><img src="assets/images/trips/yacht.png" alt="Private Yacht" loading="lazy"><span class="trip-card-badge" style="background:var(--accent)">Luxury</span></div>
+              <div class="trip-card-body">
+                <div class="trip-card-location"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Red Sea</span></div>
+                <h3>Private Luxury Yacht Cruise</h3>
+                <div class="trip-card-meta"><div class="trip-card-meta-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>6 hrs</span></div><div class="trip-card-meta-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Private</span></div></div>
+                <div class="trip-card-footer"><div class="trip-card-price"><span class="price-label">From</span><span class="price-value">$250</span></div><div class="trip-card-rating"><div class="stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><span class="rating-text">5.0</span></div></div>
+                <div class="trip-card-actions"><a href="trip.html" class="btn btn-outline-primary btn-sm">View Details</a><a href="trip.html#book" class="btn btn-primary btn-sm">Book Now</a></div>
+              </div>
+            </div>
+            <!-- Card 5 -->
+            <div class="trip-card">
+              <div class="trip-card-image"><img src="assets/images/trips/diving.png" alt="Intro Diving" loading="lazy"></div>
+              <div class="trip-card-body">
+                <div class="trip-card-location"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Red Sea</span></div>
+                <h3>Introductory Scuba Diving Experience</h3>
+                <div class="trip-card-meta"><div class="trip-card-meta-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>4 hrs</span></div><div class="trip-card-meta-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg><span>Group</span></div></div>
+                <div class="trip-card-footer"><div class="trip-card-price"><span class="price-label">From</span><span class="price-value">$55</span></div><div class="trip-card-rating"><div class="stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><span class="rating-text">4.9</span></div></div>
+                <div class="trip-card-actions"><a href="trip.html" class="btn btn-outline-primary btn-sm">View Details</a><a href="trip.html#book" class="btn btn-primary btn-sm">Book Now</a></div>
+              </div>
+            </div>
+            <!-- Card 6 -->
+            <div class="trip-card">
+              <div class="trip-card-image"><img src="assets/images/trips/mount-sinai.png" alt="Mount Sinai" loading="lazy"></div>
+              <div class="trip-card-body">
+                <div class="trip-card-location"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Saint Catherine</span></div>
+                <h3>Mount Sinai Sunrise Trek</h3>
+                <div class="trip-card-meta"><div class="trip-card-meta-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>14 hrs</span></div><div class="trip-card-meta-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg><span>Group</span></div></div>
+                <div class="trip-card-footer"><div class="trip-card-price"><span class="price-label">From</span><span class="price-value">$35</span></div><div class="trip-card-rating"><div class="stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><span class="rating-text">4.9</span></div></div>
+                <div class="trip-card-actions"><a href="trip.html" class="btn btn-outline-primary btn-sm">View Details</a><a href="trip.html#book" class="btn btn-primary btn-sm">Book Now</a></div>
+              </div>
+            </div>
+            <!-- Card 7 -->
+            <div class="trip-card">
+              <div class="trip-card-image"><img src="assets/images/trips/snorkeling.png" alt="White Island" loading="lazy"><span class="trip-card-badge">-15%</span></div>
+              <div class="trip-card-body">
+                <div class="trip-card-location"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Red Sea</span></div>
+                <h3>White Island Snorkeling Trip</h3>
+                <div class="trip-card-meta"><div class="trip-card-meta-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>6 hrs</span></div><div class="trip-card-meta-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg><span>Group</span></div></div>
+                <div class="trip-card-footer"><div class="trip-card-price"><span class="price-label">From</span><span class="price-value">$20 <span class="price-old">$25</span></span></div><div class="trip-card-rating"><div class="stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><span class="rating-text">4.6</span></div></div>
+                <div class="trip-card-actions"><a href="trip.html" class="btn btn-outline-primary btn-sm">View Details</a><a href="trip.html#book" class="btn btn-primary btn-sm">Book Now</a></div>
+              </div>
+            </div>
+            <!-- Card 8 -->
+            <div class="trip-card">
+              <div class="trip-card-image"><img src="assets/images/trips/bedouin.png" alt="Bedouin Dinner" loading="lazy"></div>
+              <div class="trip-card-body">
+                <div class="trip-card-location"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Sinai Desert</span></div>
+                <h3>Bedouin Dinner & Star Gazing</h3>
+                <div class="trip-card-meta"><div class="trip-card-meta-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>4 hrs</span></div><div class="trip-card-meta-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg><span>Group</span></div></div>
+                <div class="trip-card-footer"><div class="trip-card-price"><span class="price-label">From</span><span class="price-value">$25</span></div><div class="trip-card-rating"><div class="stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><span class="rating-text">4.8</span></div></div>
+                <div class="trip-card-actions"><a href="trip.html" class="btn btn-outline-primary btn-sm">View Details</a><a href="trip.html#book" class="btn btn-primary btn-sm">Book Now</a></div>
+              </div>
+            </div>
+            <!-- Card 9 -->
+            <div class="trip-card">
+              <div class="trip-card-image"><img src="assets/images/trips/parasailing.png" alt="Parasailing" loading="lazy"></div>
+              <div class="trip-card-body">
+                <div class="trip-card-location"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Naama Bay</span></div>
+                <h3>Parasailing Adventure</h3>
+                <div class="trip-card-meta"><div class="trip-card-meta-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>1 hr</span></div><div class="trip-card-meta-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Private</span></div></div>
+                <div class="trip-card-footer"><div class="trip-card-price"><span class="price-label">From</span><span class="price-value">$40</span></div><div class="trip-card-rating"><div class="stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><span class="rating-text">4.7</span></div></div>
+                <div class="trip-card-actions"><a href="trip.html" class="btn btn-outline-primary btn-sm">View Details</a><a href="trip.html#book" class="btn btn-primary btn-sm">Book Now</a></div>
+              </div>
+            </div>
+            <!-- Card 10 -->
+            <div class="trip-card">
+              <div class="trip-card-image"><img src="assets/images/trips/dahab.png" alt="Dahab Blue Hole" loading="lazy"></div>
+              <div class="trip-card-body">
+                <div class="trip-card-location"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Dahab</span></div>
+                <h3>Dahab & Blue Hole Day Trip</h3>
+                <div class="trip-card-meta"><div class="trip-card-meta-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>10 hrs</span></div><div class="trip-card-meta-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg><span>Group</span></div></div>
+                <div class="trip-card-footer"><div class="trip-card-price"><span class="price-label">From</span><span class="price-value">$30</span></div><div class="trip-card-rating"><div class="stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><span class="rating-text">4.8</span></div></div>
+                <div class="trip-card-actions"><a href="trip.html" class="btn btn-outline-primary btn-sm">View Details</a><a href="trip.html#book" class="btn btn-primary btn-sm">Book Now</a></div>
+              </div>
+            </div>
+            <!-- Card 11 -->
+            <div class="trip-card">
+              <div class="trip-card-image"><img src="assets/images/trips/glass-boat.png" alt="Glass Boat" loading="lazy"></div>
+              <div class="trip-card-body">
+                <div class="trip-card-location"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Naama Bay</span></div>
+                <h3>Glass-Bottom Boat Tour</h3>
+                <div class="trip-card-meta"><div class="trip-card-meta-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>2 hrs</span></div><div class="trip-card-meta-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/></svg><span>Family</span></div></div>
+                <div class="trip-card-footer"><div class="trip-card-price"><span class="price-label">From</span><span class="price-value">$15</span></div><div class="trip-card-rating"><div class="stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><span class="rating-text">4.5</span></div></div>
+                <div class="trip-card-actions"><a href="trip.html" class="btn btn-outline-primary btn-sm">View Details</a><a href="trip.html#book" class="btn btn-primary btn-sm">Book Now</a></div>
+              </div>
+            </div>
+            <!-- Card 12 -->
+            <div class="trip-card">
+              <div class="trip-card-image"><img src="assets/images/trips/snorkeling.png" alt="Dolphin Show" loading="lazy"><span class="trip-card-badge">New</span></div>
+              <div class="trip-card-body">
+                <div class="trip-card-location"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Sharm</span></div>
+                <h3>Dolphin Show Experience</h3>
+                <div class="trip-card-meta"><div class="trip-card-meta-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>2 hrs</span></div><div class="trip-card-meta-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/></svg><span>Family</span></div></div>
+                <div class="trip-card-footer"><div class="trip-card-price"><span class="price-label">From</span><span class="price-value">$20</span></div><div class="trip-card-rating"><div class="stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><span class="rating-text">4.4</span></div></div>
+                <div class="trip-card-actions"><a href="trip.html" class="btn btn-outline-primary btn-sm">View Details</a><a href="trip.html#book" class="btn btn-primary btn-sm">Book Now</a></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pagination -->
+          <div class="pagination">
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">→</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (same as homepage) -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><div class="brand-name">LUNA BLANCA</div><p>Your trusted partner for the best tours, excursions, and transfers in Sharm El Sheikh.</p><div class="footer-social"><a href="#"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a><a href="#"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/></svg></a></div></div>
+        <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="trips.html">All Trips</a></li><li><a href="transfers.html">Transfers</a></li><li><a href="check-booking.html">Check Booking</a></li></ul></div>
+        <div class="footer-col"><h4>Categories</h4><ul><li><a href="#">Sea Trips</a></li><li><a href="#">Diving</a></li><li><a href="#">Desert Safari</a></li></ul></div>
+        <div class="footer-col"><h4>Contact</h4><div class="footer-contact-item"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg><span>+20 123 456 7890</span></div><div class="footer-contact-item"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>info@sharmexcursions.com</span></div></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2025 LUNA BLANCA. All rights reserved.</p></div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/201234567890" class="whatsapp-float" target="_blank" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg></a>
+  <button class="back-to-top"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg></button>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Show mobile filter button on tablet/mobile
+    if (window.innerWidth <= 992) {
+      document.querySelector('.mobile-filter-btn').style.display = 'flex';
+    }
+    window.addEventListener('resize', () => {
+      const btn = document.querySelector('.mobile-filter-btn');
+      if (btn) btn.style.display = window.innerWidth <= 992 ? 'flex' : 'none';
+    });
+  </script>
+</body>
+</html>

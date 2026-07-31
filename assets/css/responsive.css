@@ -1,0 +1,594 @@
+/* ============================================================
+   RESPONSIVE STYLES
+   Breakpoints: 1200, 992, 768, 576
+   ============================================================ */
+
+/* Large Desktop */
+@media (max-width: 1200px) {
+  .hero h1 {
+    font-size: var(--text-5xl);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: var(--space-6);
+  }
+
+  .trip-detail-content {
+    grid-template-columns: 1fr 340px;
+  }
+
+  .trips-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablet Landscape */
+@media (max-width: 992px) {
+  :root {
+    --text-6xl: 2.5rem;
+    --text-5xl: 2.25rem;
+    --text-4xl: 2rem;
+    --text-3xl: 1.5rem;
+  }
+
+  .navbar-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 320px;
+    height: 100vh;
+    background: var(--white);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 100px var(--space-8) var(--space-8);
+    transition: right var(--transition);
+    box-shadow: var(--shadow-2xl);
+    z-index: 5;
+    gap: var(--space-6);
+  }
+
+  body[dir="rtl"] .navbar-menu {
+    right: auto;
+    left: -100%;
+    transition: left var(--transition);
+  }
+
+  .navbar-menu.active {
+    right: 0;
+  }
+
+  body[dir="rtl"] .navbar-menu.active {
+    right: auto;
+    left: 0;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 0;
+  }
+
+  .navbar-links a {
+    color: var(--gray-800);
+    padding: var(--space-3) 0;
+    width: 100%;
+    font-size: var(--text-base);
+    border-bottom: 1px solid var(--gray-100);
+  }
+
+  .navbar-links a:hover {
+    color: var(--primary);
+  }
+
+  .navbar-actions {
+    width: 100%;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .navbar-cta {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .navbar-toggle {
+    display: flex;
+  }
+
+  /* Hero */
+  .hero-content {
+    padding-top: 80px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+  }
+
+  .hero-stats {
+    gap: var(--space-6);
+  }
+
+  /* Search box */
+  .search-box {
+    flex-direction: column;
+    padding: var(--space-5);
+  }
+
+  .search-field {
+    width: 100%;
+  }
+
+  .search-btn {
+    width: 100%;
+  }
+
+  /* Grid */
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Trip Detail */
+  .trip-detail-content {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-sidebar {
+    position: static;
+    order: -1;
+    margin-bottom: var(--space-6);
+  }
+
+  .trip-gallery {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 250px 200px;
+  }
+
+  .trip-gallery-main {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  /* Trips Layout */
+  .trips-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .filters-sidebar {
+    position: static;
+    display: none;
+  }
+
+  .filters-sidebar.mobile-visible {
+    display: block;
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+  }
+
+  /* Gallery */
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 180px;
+  }
+
+  .gallery-item:nth-child(1) {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  /* Transfer form */
+  .transfer-form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Reviews */
+  .reviews-track .review-card {
+    min-width: calc(50% - var(--space-3));
+  }
+}
+
+/* Tablet Portrait */
+@media (max-width: 768px) {
+  .section {
+    padding: var(--space-12) 0;
+  }
+
+  .section-header h2 {
+    font-size: var(--text-3xl);
+  }
+
+  .container {
+    padding: 0 var(--space-4);
+  }
+
+  /* Hero */
+  .hero {
+    min-height: 90vh;
+  }
+
+  .hero h1 {
+    font-size: var(--text-4xl);
+  }
+
+  .hero p {
+    font-size: var(--text-base);
+  }
+
+  .hero-stats {
+    flex-wrap: wrap;
+    gap: var(--space-6);
+  }
+
+  .hero-stat {
+    width: calc(50% - var(--space-3));
+  }
+
+  /* Search */
+  .hero-search {
+    margin-top: -30px;
+  }
+
+  /* Categories */
+  .category-card {
+    height: 220px;
+  }
+
+  /* Trips */
+  .trips-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+
+  /* Trip Gallery */
+  .trip-gallery {
+    grid-template-columns: 1fr;
+    grid-template-rows: 300px;
+  }
+
+  .trip-gallery-main {
+    grid-column: span 1;
+  }
+
+  .trip-gallery-item:nth-child(n+3) {
+    display: none;
+  }
+
+  /* Feature Cards */
+  .grid-4.features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+
+  /* Confirmation */
+  .confirmation-details {
+    grid-template-columns: 1fr;
+  }
+
+  /* Contact CTA */
+  .contact-cta {
+    padding: var(--space-10);
+  }
+
+  .contact-cta h2 {
+    font-size: var(--text-3xl);
+  }
+
+  .contact-cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Newsletter */
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  /* Transfer form */
+  .transfer-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* Reviews */
+  .reviews-track .review-card {
+    min-width: 100%;
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: var(--space-4);
+    text-align: center;
+  }
+
+  /* Offer banner */
+  .offer-banner {
+    min-height: 300px;
+  }
+
+  .offer-content {
+    padding: var(--space-8);
+  }
+
+  .offer-content h2 {
+    font-size: var(--text-3xl);
+  }
+
+  /* Trip tabs */
+  .trip-tabs {
+    gap: 0;
+  }
+
+  .trip-tab {
+    padding: var(--space-3);
+    font-size: var(--text-xs);
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  :root {
+    --text-6xl: 2rem;
+    --text-5xl: 1.75rem;
+    --text-4xl: 1.5rem;
+    --text-3xl: 1.25rem;
+  }
+
+  .hero {
+    min-height: 100vh;
+  }
+
+  .hero h1 {
+    font-size: var(--text-3xl);
+  }
+
+  .hero p {
+    font-size: var(--text-sm);
+  }
+
+  .hero-badge {
+    font-size: var(--text-xs);
+  }
+
+  .hero-stats {
+    gap: var(--space-4);
+  }
+
+  .hero-stat .stat-number {
+    font-size: var(--text-2xl);
+  }
+
+  /* Grid overrides */
+  .grid-2,
+  .grid-3,
+  .grid-4,
+  .grid-5,
+  .grid-6 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Exception for trips — keep 2 columns */
+  .trips-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+  }
+
+  .trip-card-image {
+    height: 160px;
+  }
+
+  .trip-card-body {
+    padding: var(--space-3);
+  }
+
+  .trip-card h3 {
+    font-size: var(--text-base);
+  }
+
+  .trip-card-desc {
+    display: none;
+  }
+
+  .trip-card-meta {
+    gap: var(--space-2);
+  }
+
+  .trip-card-actions {
+    flex-direction: column;
+  }
+
+  /* Categories 2-col on mobile */
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .category-card {
+    height: 180px;
+  }
+
+  /* Features 1-col on mobile */
+  .features-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Gallery */
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 150px;
+  }
+
+  /* Booking sidebar */
+  .booking-sidebar {
+    padding: var(--space-4);
+  }
+
+  .booking-price .price-value {
+    font-size: var(--text-2xl);
+  }
+
+  /* Page header */
+  .page-header {
+    padding: 120px 0 40px;
+  }
+
+  /* Confirmation */
+  .confirmation-header {
+    padding: var(--space-6);
+  }
+
+  .confirmation-body {
+    padding: var(--space-5);
+  }
+
+  .booking-number {
+    font-size: var(--text-xl);
+  }
+
+  /* WhatsApp float */
+  .whatsapp-float {
+    bottom: 20px;
+    right: 15px;
+    width: 52px;
+    height: 52px;
+  }
+
+  .back-to-top {
+    bottom: 80px;
+    right: 15px;
+    width: 38px;
+    height: 38px;
+  }
+
+  /* Offer */
+  .offer-banner {
+    min-height: 250px;
+  }
+
+  .offer-content {
+    padding: var(--space-6);
+  }
+
+  .offer-content h2 {
+    font-size: var(--text-2xl);
+  }
+
+  .offer-discount-badge {
+    font-size: var(--text-base);
+  }
+
+  /* Filter mobile button */
+  .mobile-filter-btn {
+    display: flex;
+    width: 100%;
+    margin-bottom: var(--space-4);
+  }
+
+  /* Transfer tabs */
+  .transfer-type-tabs {
+    gap: var(--space-1);
+  }
+
+  .transfer-tab {
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-xs);
+  }
+
+  /* Vehicle cards */
+  .vehicle-card-image {
+    height: 120px;
+  }
+
+  /* Check booking */
+  .check-booking-form {
+    padding: var(--space-6);
+  }
+}
+
+/* Very small mobile */
+@media (max-width: 380px) {
+  .trips-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .categories-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero-stats {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-stat {
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* --- Print Styles --- */
+@media print {
+  .navbar,
+  .whatsapp-float,
+  .back-to-top,
+  .footer,
+  .hero-search,
+  .btn,
+  .scroll-progress {
+    display: none !important;
+  }
+
+  body {
+    font-size: 12pt;
+    color: #000;
+    background: #fff;
+  }
+
+  .section {
+    padding: 20px 0;
+  }
+
+  .trip-card,
+  .confirmation-card {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+}
+
+/* Mobile Logo Fixes */
+@media (max-width: 576px) {
+  .navbar-brand {
+    gap: var(--space-2);
+  }
+  .navbar-brand .logo {
+    width: 32px;
+    height: 32px;
+  }
+  .navbar-brand .brand-name {
+    font-size: 1.1rem;
+  }
+  .navbar-brand .brand-tagline {
+    display: none;
+  }
+}
