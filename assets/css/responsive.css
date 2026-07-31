@@ -3,16 +3,6 @@
    Breakpoints: 1200, 992, 768, 576
    ============================================================ */
 
-/* Global overflow fix to prevent horizontal scroll on all screen sizes */
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
 /* Large Desktop */
 @media (max-width: 1200px) {
   .hero h1 {
@@ -184,14 +174,9 @@ html, body {
   }
 
   /* Footer */
-  .footer {
-    overflow-x: hidden;
-    width: 100%;
-  }
   .footer-grid {
     grid-template-columns: 1fr 1fr;
-    gap: var(--space-6);
-    width: 100%;
+    gap: var(--space-8);
   }
 
   /* Gallery */
@@ -327,20 +312,9 @@ html, body {
   }
 
   /* Footer */
-  .footer {
-    overflow-x: hidden;
-    width: 100%;
-  }
   .footer-grid {
     grid-template-columns: 1fr;
     gap: var(--space-6);
-    width: 100%;
-  }
-  .footer-bottom {
-    flex-direction: column;
-    gap: var(--space-3);
-    text-align: center;
-    width: 100%;
   }
 
   .footer-bottom {
@@ -419,23 +393,10 @@ html, body {
   .trips-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-3);
-    width: 100%;
-  }
-
-  .trip-card {
-    width: 100%;
-    max-width: 100%;
-    overflow: hidden;
   }
 
   .trip-card-image {
-    height: 180px;
-  }
-
-  .trip-card-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: 160px;
   }
 
   .trip-card-body {
@@ -588,6 +549,7 @@ html, body {
 
 /* --- Print Styles --- */
 @media print {
+
   .navbar,
   .whatsapp-float,
   .back-to-top,
@@ -620,13 +582,16 @@ html, body {
   .navbar-brand {
     gap: var(--space-2);
   }
+
   .navbar-brand .logo {
     width: 32px;
     height: 32px;
   }
+
   .navbar-brand .brand-name {
     font-size: 1.1rem;
   }
+
   .navbar-brand .brand-tagline {
     display: none;
   }
