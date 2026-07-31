@@ -650,38 +650,78 @@
     background: var(--gray-800);
   }
 
-  /* Drawer Navigation */
+  /* Horizontal Scroll Navigation (No Drawer) */
   .navbar-menu {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 280px;
-    height: 100vh;
-    background: var(--white);
-    flex-direction: column;
-    align-items: stretch;
-    padding: 80px var(--space-6) var(--space-8);
-    transition: right var(--transition);
-    box-shadow: var(--shadow-2xl);
-    z-index: 1000;
-    gap: var(--space-4);
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    background: transparent !important;
+    padding: 10px 0 0 0 !important;
+    box-shadow: none !important;
     display: flex !important;
-    overflow-y: auto;
+    flex-direction: row !important;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    gap: 15px !important;
+    margin-top: 10px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    transition: none !important;
+  }
+
+  .navbar.scrolled .navbar-menu {
+    border-top: 1px solid rgba(0,0,0,0.1);
+  }
+
+  /* Hide scrollbar */
+  .navbar-menu::-webkit-scrollbar {
+    display: none;
+  }
+  .navbar-menu {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .navbar-links {
+    display: flex;
+    flex-direction: row !important;
+    gap: 10px;
+    align-items: center;
+    width: max-content;
+    padding-bottom: 5px; /* for scroll area */
+  }
+
+  .navbar-links a {
+    font-size: 0.9rem !important;
+    padding: 6px 14px !important;
+    background: rgba(255,255,255,0.15);
+    border-radius: 20px;
+    color: var(--white);
+    border-bottom: none !important;
+    font-weight: 500;
+  }
+
+  .navbar.scrolled .navbar-links a {
+    background: var(--gray-100);
+    color: var(--gray-800);
+  }
+
+  .navbar-links a.active {
+    background: var(--primary) !important;
+    color: var(--white) !important;
+  }
+
+  /* Make navbar container allow wrapping */
+  .navbar .container {
+    flex-wrap: wrap !important;
+    height: auto !important;
+    padding-top: 10px;
+    padding-bottom: 5px;
   }
   
-  body[dir="rtl"] .navbar-menu {
-    right: auto;
-    left: -100%;
-    transition: left var(--transition);
-  }
-  
-  .navbar-menu.active {
-    right: 0 !important;
-  }
-  
-  body[dir="rtl"] .navbar-menu.active {
-    right: auto !important;
-    left: 0 !important;
+  .navbar-toggle {
+    display: none !important;
   }
 }
 
@@ -713,7 +753,7 @@
   }
   
   .hero-content {
-    padding-top: 90px; 
+    padding-top: 130px; 
     padding-bottom: 40px;
   }
   
@@ -803,5 +843,163 @@
     right: 15px;
     width: 52px;
     height: 52px;
+  }
+}
+
+/* ==========================================================
+   FORCE MOBILE NAVBAR LAYOUT
+   ========================================================== */
+@media (max-width: 992px) {
+  .navbar {
+    padding: 10px 0 0 0 !important;
+  }
+
+  .navbar .container {
+    display: grid !important;
+    grid-template-columns: 1fr auto !important;
+    grid-template-rows: auto auto !important;
+    align-items: center !important;
+    padding: 0 15px !important;
+    gap: 15px 0 !important;
+  }
+  
+  .navbar-brand {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    justify-self: start !important;
+    margin: 0 !important;
+  }
+  
+  .header-right {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    justify-self: end !important;
+    margin: 0 !important;
+  }
+  
+  .navbar-menu {
+    grid-column: 1 / -1 !important;
+    grid-row: 2 !important;
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    background: transparent !important;
+    padding: 5px 0 10px 0 !important;
+    box-shadow: none !important;
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    white-space: nowrap !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 10px !important;
+    margin: 5px 0 0 0 !important;
+    border-top: 1px solid rgba(255,255,255,0.1) !important;
+    transition: none !important;
+    right: auto !important;
+    left: auto !important;
+    top: auto !important;
+  }
+  
+  .navbar.scrolled .navbar-menu {
+    border-top: 1px solid rgba(0,0,0,0.1) !important;
+  }
+
+  .navbar-links {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 8px !important;
+    align-items: center !important;
+    width: max-content !important;
+    padding-bottom: 2px !important; 
+    margin: 0 !important;
+  }
+
+  .navbar-links a {
+    font-size: 0.85rem !important;
+    padding: 4px 12px !important;
+    background: rgba(255,255,255,0.15) !important;
+    border-radius: 20px !important;
+    color: var(--white) !important;
+    border-bottom: none !important;
+    font-weight: 500 !important;
+    display: inline-block !important;
+  }
+
+  .navbar.scrolled .navbar-links a {
+    background: var(--gray-100) !important;
+    color: var(--gray-800) !important;
+  }
+
+  .navbar-links a.active {
+    background: var(--primary) !important;
+    color: var(--white) !important;
+  }
+}
+
+
+/* ==========================================================
+   TRANSFER WIDGET MOBILE RESPONSIVE
+   ========================================================== */
+@media (max-width: 992px) {
+  .hero-container-redesign {
+    padding-top: 140px; /* clear the new navbar */
+  }
+
+  .transfer-widget-container {
+    padding: 15px;
+    margin-top: 15px;
+  }
+
+  .details-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .details-grid .input-group:last-child {
+    grid-column: 1 / -1; /* Flight number full width */
+  }
+
+  .return-grid {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .locations-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .details-grid .input-group:last-child {
+    grid-column: auto;
+  }
+
+  .transfer-type-selector {
+    grid-template-columns: 1fr;
+  }
+  
+  .transfer-type-selector .card-content {
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 10px 15px;
+  }
+  
+  .transfer-type-selector .card-content .emoji {
+    font-size: 1.4rem;
+  }
+
+  .direction-selector, .trip-type-selector {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .widget-footer {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
   }
 }
