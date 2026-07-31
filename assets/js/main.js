@@ -82,32 +82,84 @@ function initNavbar() {
     });
   }
 
-  // Language switcher
-  document.querySelectorAll('.lang-switch button').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const lang = btn.dataset.lang;
-      switchLanguage(lang);
+  // Language switcher (Dropdown)
+  const langSelect = document.getElementById('langSelect');
+  if (langSelect) {
+    langSelect.addEventListener('change', (e) => {
+      switchLanguage(e.target.value);
     });
-  });
+  }
+  
+  // Apply saved language on load immediately to select
+  const savedLang = localStorage.getItem('sharm_lang') || 'en';
+  if (langSelect && savedLang !== 'en') {
+    langSelect.value = savedLang;
+    switchLanguage(savedLang);
+  }
 }
 
 /* ==========================================================
    LANGUAGE SWITCHING
    ========================================================== */
 function switchLanguage(lang) {
-  const isRtl = lang === 'ar';
+  const isRtl = (lang === 'ar' || lang === 'he');
   document.body.setAttribute('dir', isRtl ? 'rtl' : 'ltr');
   document.documentElement.setAttribute('lang', lang);
 
-  // Update active button
+  // Update active button if they exist
   document.querySelectorAll('.lang-switch button').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.lang === lang);
   });
+  
+  const langSelect = document.getElementById('langSelect');
+  if (langSelect && langSelect.value !== lang) {
+    langSelect.value = lang;
+  }
 
-  // Toggle content visibility
-  document.querySelectorAll('[data-lang-en]').forEach(el => {
-    el.textContent = lang === 'ar' ? el.dataset.langAr : el.dataset.langEn;
-  });
+  // If language is English or Arabic, we use manual data-lang attributes
+  // Otherwise, we let Google Translate handle it.
+  if (lang === 'ar' || lang === 'en') {
+      // Manual translation fallback for EN and AR
+      document.querySelectorAll('[data-lang-en]').forEach(el => {
+        let attr = 'lang' + lang.charAt(0).toUpperCase() + lang.slice(1);
+        let text = el.dataset[attr];
+        
+        if (!text) {
+          if (lang === 'ar' && el.dataset.langAr) text = el.dataset.langAr;
+          else text = el.dataset.langEn;
+        }
+        
+        if (text) {
+          if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') el.placeholder = text;
+          else el.innerHTML = text;
+        }
+      });
+      
+      // Trigger Google Translate back to original (English) if switching back to manual EN/AR
+      const googleSelect = document.querySelector('.goog-te-combo');
+      if (googleSelect && googleSelect.value !== '') {
+          googleSelect.value = 'en'; // set to default
+          googleSelect.dispatchEvent(new Event('change'));
+      }
+  } else {
+      // Trigger Google Translate with retry mechanism
+      let retries = 0;
+      function tryTranslate() {
+          const googleSelect = document.querySelector('.goog-te-combo');
+          if (googleSelect && googleSelect.options.length > 0) {
+              // Google sometimes uses 'iw' for Hebrew instead of 'he'
+              let targetLang = lang;
+              if (lang === 'he') targetLang = 'iw';
+              
+              googleSelect.value = targetLang;
+              googleSelect.dispatchEvent(new Event('change'));
+          } else if (retries < 20) { // Try for 10 seconds max
+              retries++;
+              setTimeout(tryTranslate, 500);
+          }
+      }
+      tryTranslate();
+  }
 
   document.querySelectorAll('[data-lang]').forEach(el => {
     el.style.display = el.dataset.lang === lang ? '' : 'none';
@@ -116,7 +168,6 @@ function switchLanguage(lang) {
   // Store preference
   localStorage.setItem('sharm_lang', lang);
 }
-
 // Apply saved language on load
 (function() {
   const savedLang = localStorage.getItem('sharm_lang') || 'en';
@@ -623,3 +674,27 @@ document.addEventListener('click', (e) => {
     document.querySelectorAll('img[data-src]').forEach(img => imgObserver.observe(img));
   }
 })();
+
+/* ==========================================================
+   SCROLL ANIMATIONS (INTERSECTION OBSERVER)
+   ========================================================== */
+document.addEventListener('DOMContentLoaded', () => {
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.15
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // Only animate once
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.fade-up').forEach(el => {
+    observer.observe(el);
+  });
+});

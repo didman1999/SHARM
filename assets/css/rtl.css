@@ -81,7 +81,14 @@ body[dir="rtl"] .trip-tab-content ul li::before {
 }
 
 /* --- WhatsApp Float --- */
-body[dir="rtl"] .whatsapp-float {
+body[dir="rtl"] .whatsapp-float,
+body[dir="rtl"] .facebook-float {
+  right: auto;
+  left: 30px;
+}
+
+/* old block removed */
+/* body[dir="rtl"] .whatsapp-float {
   right: auto;
   left: 30px;
 }
@@ -196,7 +203,15 @@ body[dir="rtl"] .search-field select {
 }
 
 @media (max-width: 576px) {
-  body[dir="rtl"] .whatsapp-float {
+  body[dir="rtl"] .whatsapp-float,
+body[dir="rtl"] .facebook-float {
+  right: auto;
+  left: 30px;
+}
+
+/* old block removed */
+/* body[dir="rtl"] .whatsapp-float,
+  body[dir="rtl"] .facebook-float {
     left: 15px;
     right: auto;
   }

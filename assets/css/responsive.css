@@ -577,22 +577,231 @@
   }
 }
 
-/* Mobile Logo Fixes */
-@media (max-width: 576px) {
-  .navbar-brand {
-    gap: var(--space-2);
+
+/* ============================================================
+   Perfect Responsive Navigation & Mobile Layout
+   ============================================================ */
+
+/* Mobile & Tablet Responsive Nav Fixes */
+@media (max-width: 992px) {
+  /* Prevent wrapping of navbar */
+  .navbar .container {
+    flex-wrap: nowrap !important;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
   }
 
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    flex-wrap: nowrap !important;
+  }
+
+  /* Compact language selector for top nav */
+  .lang-dropdown {
+    width: auto !important;
+    order: unset !important;
+    margin-top: 0 !important;
+    display: flex !important;
+  }
+  
+  .lang-select {
+    min-width: unset !important;
+    max-width: 100px !important;
+    padding: 6px 26px 6px 12px !important;
+    font-size: 0.85rem !important;
+    background-position: right 8px center !important;
+    background-size: 14px !important;
+    border-radius: var(--radius-full);
+  }
+
+  /* Hamburger Toggle */
+  .navbar-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    z-index: 1001;
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .navbar.scrolled .navbar-toggle {
+    background: var(--gray-100);
+    border-color: var(--gray-200);
+  }
+
+  .navbar-toggle span {
+    width: 22px;
+    height: 2px;
+    background: var(--white);
+    transition: all var(--transition);
+  }
+
+  .navbar.scrolled .navbar-toggle span {
+    background: var(--gray-800);
+  }
+
+  /* Drawer Navigation */
+  .navbar-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: var(--white);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 80px var(--space-6) var(--space-8);
+    transition: right var(--transition);
+    box-shadow: var(--shadow-2xl);
+    z-index: 1000;
+    gap: var(--space-4);
+    display: flex !important;
+    overflow-y: auto;
+  }
+  
+  body[dir="rtl"] .navbar-menu {
+    right: auto;
+    left: -100%;
+    transition: left var(--transition);
+  }
+  
+  .navbar-menu.active {
+    right: 0 !important;
+  }
+  
+  body[dir="rtl"] .navbar-menu.active {
+    right: auto !important;
+    left: 0 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Logo */
   .navbar-brand .logo {
-    width: 32px;
-    height: 32px;
+    width: 42px;
+    height: 42px;
   }
-
+  
   .navbar-brand .brand-name {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
+  }
+  
+  .navbar-brand .brand-tagline {
+    display: none; /* Hide tagline on mobile */
   }
 
-  .navbar-brand .brand-tagline {
+  /* Hide "Book Now" CTA from top header on small mobile screens to keep it clean */
+  .header-right .navbar-cta {
     display: none;
+  }
+
+  /* Fix Hero Section Spacing */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+  
+  .hero-content {
+    padding-top: 90px; 
+    padding-bottom: 40px;
+  }
+  
+  .hero-badge {
+    font-size: 0.8rem;
+    padding: 6px 16px;
+    margin-bottom: 1.25rem;
+    line-height: 1.4;
+  }
+  
+  .hero h1 {
+    font-size: 2.1rem;
+    line-height: 1.25;
+    margin-bottom: 1rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-buttons .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  /* Make stats visually appealing and clear on mobile */
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(8px);
+    padding: 16px;
+    border-radius: var(--radius-xl);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+  
+  .hero-stat {
+    text-align: center;
+    width: 100% !important;
+  }
+  
+  .hero-stat .stat-number {
+    font-size: 1.6rem;
+    line-height: 1.2;
+  }
+  
+  .hero-stat .stat-label {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.9);
+  }
+}
+
+@media (max-width: 400px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .navbar-brand .brand-name {
+    font-size: 1.05rem;
+  }
+  
+  .navbar-brand .logo {
+    width: 38px;
+    height: 38px;
+  }
+  
+  .lang-select {
+    padding: 6px 20px 6px 10px !important;
+    font-size: 0.8rem !important;
+    max-width: 90px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .facebook-float {
+    bottom: 90px;
+    right: 15px;
+    width: 52px;
+    height: 52px;
   }
 }

@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Book the best tours, excursions, and transfers in Sharm El Sheikh. Snorkeling, diving, desert safari, boat trips, and more. Best prices guaranteed!">
   <meta name="keywords" content="Sharm El Sheikh, tours, excursions, Red Sea, snorkeling, diving, desert safari, Egypt tourism">
-  <title>LUNA BLANCA — Best Tours & Activities in Sharm El Sheikh</title>
+  <title>LUNA BIANCA — Best Tours & Activities in Sharm El Sheikh</title>
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230891B2'/%3E%3Cstop offset='100%25' stop-color='%2322D3EE'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='45' fill='url(%23g)'/%3E%3Ctext x='50' y='65' text-anchor='middle' font-size='40' font-weight='bold' fill='white' font-family='Arial'%3ESE%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/jpeg" href="image/LOGO.jpeg">
 
   <!-- CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
@@ -26,9 +26,9 @@
   <nav class="navbar transparent" data-transparent="true" id="navbar">
     <div class="container">
       <a href="index.html" class="navbar-brand">
-        <img src="image/LOGO.jpeg" class="logo" style="mix-blend-mode: multiply; border-radius: 50%; object-fit: cover; width: 42px; height: 42px;" alt="Luna Blanca">
+        <img src="image/LOGO.jpeg" class="logo" alt="Luna Bianca">
         <div class="brand-text">
-          <span class="brand-name" data-lang-en="LUNA BLANCA" data-lang-ar="لونا بلانكا">LUNA BLANCA</span>
+          <span class="brand-name" data-lang-en="LUNA BIANCA" data-lang-ar="لونا بيانكا">LUNA BIANCA</span>
           <span class="brand-tagline" data-lang-en="Discover the Red Sea" data-lang-ar="اكتشف البحر الأحمر">Discover the Red Sea</span>
         </div>
       </a>
@@ -42,23 +42,33 @@
           <a href="#gallery" data-lang-en="Gallery" data-lang-ar="المعرض">Gallery</a>
           <a href="#contact" data-lang-en="Contact" data-lang-ar="تواصل">Contact</a>
         </div>
-        <div class="navbar-actions">
-          <div class="lang-switch">
-            <button class="active" data-lang="en">EN</button>
-            <button data-lang="ar">عربي</button>
-          </div>
-          <a href="trips.html" class="navbar-cta">
-            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span data-lang-en="Book Now" data-lang-ar="احجز الآن">Book Now</span>
-          </a>
-        </div>
       </div>
 
-      <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <div class="header-right">
+        <div class="lang-dropdown">
+          <select id="langSelect" class="lang-select" aria-label="Select Language">
+            <option value="en">English</option>
+            <option value="ar">العربية</option>
+            <option value="ru">Русский</option>
+            <option value="it">Italiano</option>
+            <option value="tr">Türkçe</option>
+            <option value="he">עברית</option>
+            <option value="fr">Français</option>
+            <option value="es">Español</option>
+          </select>
+        </div>
+        
+        <a href="trips.html" class="navbar-cta">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span data-lang-en="Book Now" data-lang-ar="احجز الآن" class="cta-text">Book Now</span>
+        </a>
+
+        <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
@@ -179,7 +189,7 @@
 
       <div class="grid grid-4 animate-on-scroll">
         <!-- Trip Card 1: Ras Mohammed -->
-        <div class="trip-card">
+        <div class="trip-card fade-up">
           <div class="trip-card-image">
             <img src="assets/images/trips/ras-mohammed.png" alt="Ras Mohammed National Park" loading="lazy">
             <span class="trip-card-badge">-20%</span>
@@ -232,7 +242,7 @@
         </div>
 
         <!-- Trip Card 2: Tiran Island -->
-        <div class="trip-card">
+        <div class="trip-card fade-up">
           <div class="trip-card-image">
             <img src="assets/images/trips/tiran-island.png" alt="Tiran Island" loading="lazy">
           </div>
@@ -281,7 +291,7 @@
         </div>
 
         <!-- Trip Card 3: Desert Safari -->
-        <div class="trip-card">
+        <div class="trip-card fade-up">
           <div class="trip-card-image">
             <img src="assets/images/trips/desert-safari.png" alt="Desert Safari" loading="lazy">
             <span class="trip-card-badge">Popular</span>
@@ -327,7 +337,7 @@
         </div>
 
         <!-- Trip Card 4: Private Yacht -->
-        <div class="trip-card">
+        <div class="trip-card fade-up">
           <div class="trip-card-image">
             <img src="assets/images/trips/yacht.png" alt="Private Yacht" loading="lazy">
             <span class="trip-card-badge" style="background: var(--accent);">Luxury</span>
@@ -391,7 +401,7 @@
       </div>
 
       <div class="grid grid-4 categories-grid animate-on-scroll">
-        <a href="trips.html?cat=sea-trips" class="category-card">
+        <a href="trips.html?cat=sea-trips" class="category-card fade-up">
           <img src="assets/images/categories/sea-trips.png" alt="Sea Trips" loading="lazy">
           <div class="category-card-overlay">
             <h3 data-lang-en="Sea Trips" data-lang-ar="رحلات بحرية">Sea Trips</h3>
@@ -399,7 +409,7 @@
             <span class="category-count">12 Trips</span>
           </div>
         </a>
-        <a href="trips.html?cat=diving" class="category-card">
+        <a href="trips.html?cat=diving" class="category-card fade-up">
           <img src="assets/images/categories/diving.png" alt="Diving & Snorkeling" loading="lazy">
           <div class="category-card-overlay">
             <h3 data-lang-en="Diving & Snorkeling" data-lang-ar="غوص وسنوركلينج">Diving & Snorkeling</h3>
@@ -407,7 +417,7 @@
             <span class="category-count">8 Trips</span>
           </div>
         </a>
-        <a href="trips.html?cat=desert" class="category-card">
+        <a href="trips.html?cat=desert" class="category-card fade-up">
           <img src="assets/images/categories/desert.png" alt="Desert Safari" loading="lazy">
           <div class="category-card-overlay">
             <h3 data-lang-en="Desert Safari" data-lang-ar="سفاري الصحراء">Desert Safari</h3>
@@ -415,7 +425,7 @@
             <span class="category-count">6 Trips</span>
           </div>
         </a>
-        <a href="trips.html?cat=water-sports" class="category-card">
+        <a href="trips.html?cat=water-sports" class="category-card fade-up">
           <img src="assets/images/categories/water-sports.png" alt="Water Sports" loading="lazy">
           <div class="category-card-overlay">
             <h3 data-lang-en="Water Sports" data-lang-ar="رياضات مائية">Water Sports</h3>
@@ -423,7 +433,7 @@
             <span class="category-count">5 Trips</span>
           </div>
         </a>
-        <a href="trips.html?cat=ras-mohammed" class="category-card">
+        <a href="trips.html?cat=ras-mohammed" class="category-card fade-up">
           <img src="assets/images/categories/ras-mohammed.png" alt="Ras Mohammed" loading="lazy">
           <div class="category-card-overlay">
             <h3 data-lang-en="Ras Mohammed" data-lang-ar="رأس محمد">Ras Mohammed</h3>
@@ -431,7 +441,7 @@
             <span class="category-count">4 Trips</span>
           </div>
         </a>
-        <a href="trips.html?cat=dahab" class="category-card">
+        <a href="trips.html?cat=dahab" class="category-card fade-up">
           <img src="assets/images/categories/dahab.png" alt="Dahab Trips" loading="lazy">
           <div class="category-card-overlay">
             <h3 data-lang-en="Dahab Trips" data-lang-ar="رحلات دهب">Dahab Trips</h3>
@@ -439,7 +449,7 @@
             <span class="category-count">3 Trips</span>
           </div>
         </a>
-        <a href="trips.html?cat=saint-catherine" class="category-card">
+        <a href="trips.html?cat=saint-catherine" class="category-card fade-up">
           <img src="assets/images/categories/saint-catherine.png" alt="Saint Catherine" loading="lazy">
           <div class="category-card-overlay">
             <h3 data-lang-en="Mount Sinai & Saint Catherine" data-lang-ar="جبل موسى وسانت كاترين">Mount Sinai & Saint Catherine</h3>
@@ -447,7 +457,7 @@
             <span class="category-count">2 Trips</span>
           </div>
         </a>
-        <a href="trips.html?cat=luxury" class="category-card">
+        <a href="trips.html?cat=luxury" class="category-card fade-up">
           <img src="assets/images/categories/luxury.png" alt="Luxury Experiences" loading="lazy">
           <div class="category-card-overlay">
             <h3 data-lang-en="Luxury Experiences" data-lang-ar="تجارب فاخرة">Luxury Experiences</h3>
@@ -509,7 +519,7 @@
     <div class="container">
       <div class="section-header animate-on-scroll">
         <span class="section-badge" data-lang-en="Why Us" data-lang-ar="لماذا نحن">Why Us</span>
-        <h2 data-lang-en="Why Choose LUNA BLANCA?" data-lang-ar="لماذا تختار لونا بلانكا؟">Why Choose LUNA BLANCA?</h2>
+        <h2 data-lang-en="Why Choose LUNA BIANCA?" data-lang-ar="لماذا تختار لونا بيانكا؟">Why Choose LUNA BIANCA?</h2>
         <p data-lang-en="We go above and beyond to make your vacation unforgettable" data-lang-ar="نبذل قصارى جهدنا لجعل إجازتك لا تُنسى">We go above and beyond to make your vacation unforgettable</p>
       </div>
 
@@ -624,7 +634,7 @@
               <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
               <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             </div>
-            <p class="review-text">"Mount Sinai sunrise trek was a life-changing experience. The guide was knowledgeable and the monastery visit was fascinating. Thank you LUNA BLANCA for an incredible trip!"</p>
+            <p class="review-text">"Mount Sinai sunrise trek was a life-changing experience. The guide was knowledgeable and the monastery visit was fascinating. Thank you LUNA BIANCA for an incredible trip!"</p>
             <div class="review-author">
               <div class="review-avatar">SC</div>
               <div class="review-author-info">
@@ -654,7 +664,7 @@
     <div class="container">
       <div class="offer-banner animate-on-scroll">
         <div class="offer-banner-bg">
-          <img src="assets/images/trips/snorkeling.png" alt="Special Offer">
+          <img loading="lazy" src="assets/images/trips/snorkeling.png" alt="Special Offer">
         </div>
         <div class="offer-content">
           <div class="offer-discount-badge">🔥 20% OFF</div>
@@ -684,43 +694,43 @@
       </div>
 
       <div class="gallery-grid animate-on-scroll">
-        <div class="gallery-item">
+        <div class="gallery-item fade-up">
           <img src="assets/images/gallery/gallery-1.png" alt="Snorkeling in Red Sea" loading="lazy">
           <div class="gallery-item-overlay">
             <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
           </div>
         </div>
-        <div class="gallery-item">
+        <div class="gallery-item fade-up">
           <img src="assets/images/gallery/gallery-2.png" alt="Diving coral reef" loading="lazy">
           <div class="gallery-item-overlay">
             <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
           </div>
         </div>
-        <div class="gallery-item">
+        <div class="gallery-item fade-up">
           <img src="assets/images/gallery/gallery-3.png" alt="Ras Mohammed" loading="lazy">
           <div class="gallery-item-overlay">
             <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
           </div>
         </div>
-        <div class="gallery-item">
+        <div class="gallery-item fade-up">
           <img src="assets/images/gallery/gallery-4.png" alt="Yacht cruise" loading="lazy">
           <div class="gallery-item-overlay">
             <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
           </div>
         </div>
-        <div class="gallery-item">
+        <div class="gallery-item fade-up">
           <img src="assets/images/gallery/gallery-5.png" alt="Desert safari" loading="lazy">
           <div class="gallery-item-overlay">
             <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
           </div>
         </div>
-        <div class="gallery-item">
+        <div class="gallery-item fade-up">
           <img src="assets/images/gallery/gallery-6.png" alt="Tiran Island" loading="lazy">
           <div class="gallery-item-overlay">
             <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
           </div>
         </div>
-        <div class="gallery-item">
+        <div class="gallery-item fade-up">
           <img src="assets/images/gallery/gallery-7.png" alt="Bedouin dinner" loading="lazy">
           <div class="gallery-item-overlay">
             <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
@@ -813,7 +823,7 @@
         <h2 data-lang-en="Ready for an Unforgettable Adventure?" data-lang-ar="مستعد لمغامرة لا تُنسى؟">Ready for an Unforgettable Adventure?</h2>
         <p data-lang-en="Contact us now to plan your perfect Sharm El Sheikh experience. We're available 24/7 via WhatsApp, phone, or email." data-lang-ar="تواصل معنا الآن لتخطيط تجربتك المثالية في شرم الشيخ. متاحون 24/7 عبر واتساب أو الهاتف أو البريد.">Contact us now to plan your perfect Sharm El Sheikh experience. We're available 24/7 via WhatsApp, phone, or email.</p>
         <div class="contact-cta-buttons">
-          <a href="https://wa.me/201234567890" class="btn btn-whatsapp btn-lg" target="_blank">
+          <a href="https://wa.me/201515682365" class="btn btn-whatsapp btn-lg" target="_blank">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
             <span data-lang-en="Chat on WhatsApp" data-lang-ar="تحدث عبر واتساب">Chat on WhatsApp</span>
           </a>
@@ -850,7 +860,7 @@
       <div class="footer-grid">
         <!-- Brand Column -->
         <div class="footer-brand">
-          <div class="brand-name" data-lang-en="LUNA BLANCA" data-lang-ar="لونا بلانكا">LUNA BLANCA</div>
+          <div class="brand-name" data-lang-en="LUNA BIANCA" data-lang-ar="لونا بيانكا">LUNA BIANCA</div>
           <p data-lang-en="Your trusted partner for the best tours, excursions, and transfers in Sharm El Sheikh. We create unforgettable memories with safety, comfort, and excitement." data-lang-ar="شريكك الموثوق لأفضل الجولات والرحلات والتوصيلات في شرم الشيخ. نصنع ذكريات لا تُنسى مع الأمان والراحة والمتعة.">Your trusted partner for the best tours, excursions, and transfers in Sharm El Sheikh. We create unforgettable memories with safety, comfort, and excitement.</p>
           <div class="footer-social">
             <a href="#" aria-label="Facebook">
@@ -917,7 +927,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2025 LUNA BLANCA. All rights reserved.</p>
+        <p>&copy; 2025 LUNA BIANCA. All rights reserved.</p>
         <div class="footer-payments">
           <span data-lang-en="Payment:" data-lang-ar="الدفع:">Payment:</span>
           <span class="payment-icon">💵 Cash</span>
@@ -935,14 +945,22 @@
   <div class="lightbox" id="lightbox">
     <button class="lightbox-close" aria-label="Close">&times;</button>
     <button class="lightbox-nav lightbox-prev" aria-label="Previous">‹</button>
-    <img src="" alt="Gallery image">
+    <img loading="lazy" src="" alt="Gallery image">
     <button class="lightbox-nav lightbox-next" aria-label="Next">›</button>
   </div>
+
+  
+  <!-- ============================================================
+       FACEBOOK FLOAT
+       ============================================================ -->
+  <a href="https://www.facebook.com/share/1Ji1PKL6av/?mibextid=wwXIfr" class="facebook-float" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+    <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+  </a>
 
   <!-- ============================================================
        WHATSAPP FLOAT
        ============================================================ -->
-  <a href="https://wa.me/201234567890" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+  <a href="https://wa.me/201515682365" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.205 0-4.253-.71-5.918-1.915l-.413-.306-2.643.886.886-2.643-.306-.413A9.952 9.952 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
   </a>
 
@@ -959,35 +977,44 @@
     document.getElementById('searchDate').min = new Date().toISOString().split('T')[0];
 
     // Language switcher
-    document.querySelectorAll('.lang-switch button').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const lang = btn.dataset.lang;
-        document.querySelectorAll('.lang-switch button').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        const isRtl = lang === 'ar';
+    const langSelect = document.getElementById('langSelect');
+    if (langSelect) {
+      langSelect.addEventListener('change', (e) => {
+        const lang = e.target.value;
+        const isRtl = (lang === 'ar' || lang === 'he');
         document.body.setAttribute('dir', isRtl ? 'rtl' : 'ltr');
         document.documentElement.setAttribute('lang', lang);
 
-        // Update all bilingual text elements
         document.querySelectorAll('[data-lang-en]').forEach(el => {
-          const text = lang === 'ar' ? el.dataset.langAr : el.dataset.langEn;
-          if (el.tagName === 'INPUT') {
-            el.placeholder = text;
-          } else {
-            el.innerHTML = text;
+          // Fallback to English if translation is missing
+          let text = el.dataset['lang' + lang.charAt(0).toUpperCase() + lang.slice(1)];
+          if (!text) {
+             if (lang === 'ar' && el.dataset.langAr) text = el.dataset.langAr;
+             else text = el.dataset.langEn;
+          }
+          if (text) {
+             if (el.tagName === 'INPUT') el.placeholder = text;
+             else el.innerHTML = text;
           }
         });
-
-        localStorage.setItem('sharm_lang', lang);
       });
-    });
+    }
 
     // Apply saved language
     const savedLang = localStorage.getItem('sharm_lang');
     if (savedLang === 'ar') {
-      document.querySelector('.lang-switch button[data-lang="ar"]').click();
+      if(langSelect){langSelect.value = savedLang; langSelect.dispatchEvent(new Event('change'));}
     }
   </script>
+
+  <!-- Google Translate -->
+  <div id="google_translate_element" style="display:none;"></div>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en', autoDisplay: false}, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </body>
 </html>
