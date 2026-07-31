@@ -9,11 +9,43 @@ document.addEventListener('DOMContentLoaded', () => {
   const dropoffContainer = document.getElementById('dropoffContainer');
   const pickupInput = document.getElementById('pickupInput');
   const dropoffInput = document.getElementById('dropoffInput');
-  
+
   const tripTypeInputs = document.querySelectorAll('input[name="trip_type"]');
   const returnDateContainer = document.getElementById('returnDateContainer');
-  
+
+  const pickupNow = document.getElementById('pickupNow');
+  const pickupDate = document.getElementById('pickupDate');
+  const pickupTime = document.getElementById('pickupTime');
+
   const currentLang = document.documentElement.lang === 'ar' ? 'ar' : 'en';
+
+  // --- NEW: Parse URL parameters for vehicle ---
+  const urlParams = new URLSearchParams(window.location.search);
+  const selectedVehicleParam = urlParams.get('vehicle');
+  
+  let selectedCarData = null;
+  if (selectedVehicleParam && typeof getFleetCarById !== 'undefined') {
+    selectedCarData = getFleetCarById(selectedVehicleParam);
+  }
+
+  // Fallback to a default if not found
+  if (!selectedCarData && typeof getFleetCarById !== 'undefined') {
+    selectedCarData = getFleetCarById('std_1'); // Default to first standard car
+  }
+
+  // --- NEW: Update Summary UI ---
+  function updateVehicleSummary() {
+    const summaryImg = document.getElementById('summaryVehicleImg');
+    const summaryName = document.getElementById('summaryVehicleName');
+    const summaryPrice = document.getElementById('summaryVehiclePrice');
+    if (!summaryImg || !selectedCarData) return;
+
+    summaryImg.src = selectedCarData.img;
+    summaryName.textContent = currentLang === 'ar' ? selectedCarData.nameAr : selectedCarData.nameEn;
+    summaryPrice.textContent = currentLang === 'ar' ? 'يبدأ من $' + selectedCarData.price : 'From $' + selectedCarData.price;
+  }
+  
+  updateVehicleSummary();
 
   // 1. Initialize Custom Searchable Dropdowns
   function setupSearchableDropdown(inputId, listId, isPickup) {
@@ -33,14 +65,14 @@ document.addEventListener('DOMContentLoaded', () => {
         item.className = 'dropdown-item';
         item.textContent = currentLang === 'ar' ? hotel.ar : hotel.en;
         item.dataset.value = hotel.en;
-        
+
         item.addEventListener('click', () => {
           input.value = item.textContent;
           input.dataset.selectedValue = hotel.en;
           list.classList.remove('active');
           validateLocations();
         });
-        
+
         list.appendChild(item);
       });
     });
@@ -67,10 +99,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const filter = input.value.toLowerCase();
     const items = list.querySelectorAll('.dropdown-item');
     const groups = list.querySelectorAll('.dropdown-group-label');
-    
+
     // Hide all groups initially
     groups.forEach(g => g.style.display = 'none');
-    
+
     let currentGroup = null;
     let hasVisibleInGroup = false;
 
@@ -92,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
     });
-    
+
     // Check last group
     if (currentGroup && hasVisibleInGroup) {
       currentGroup.style.display = 'block';
@@ -105,10 +137,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // 2. Handle Direction Changes
   function updateDirectionFields() {
     let direction = 'hotel_to_hotel';
-    directionInputs.forEach(rad => { if(rad.checked) direction = rad.value; });
+    directionInputs.forEach(rad => { if (rad.checked) direction = rad.value; });
 
     const airportName = currentLang === 'ar' ? "مطار شرم الشيخ الدولي" : "Sharm El Sheikh International Airport";
-    
+
     pickupInput.disabled = false;
     dropoffInput.disabled = false;
 
@@ -158,25 +190,94 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 5. Form Submission
+  // Now Checkbox logic
+  if (pickupNow) {
+    pickupNow.addEventListener('change', () => {
+      if (pickupNow.checked) {
+        pickupDate.disabled = true;
+        pickupDate.required = false;
+        pickupDate.value = '';
+        pickupTime.disabled = true;
+        pickupTime.required = false;
+        pickupTime.value = '';
+      } else {
+        pickupDate.disabled = false;
+        pickupDate.required = true;
+        pickupTime.disabled = false;
+        pickupTime.required = true;
+      }
+    });
+  }
+
+  // 5. Form Submission (Send to WhatsApp)
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    
-    // Simulate booking process
+
+    let vehicle = selectedCarData ? (currentLang === 'ar' ? selectedCarData.nameAr : selectedCarData.nameEn) : 'Taxi';
+
+    let tripType = 'One-way';
+    document.querySelectorAll('input[name="trip_type"]').forEach(r => { if (r.checked) tripType = r.parentElement.textContent.trim(); });
+
+    const pickup = pickupInput.value;
+    const dropoff = dropoffInput.value;
+    const pass = document.getElementById('passengers').value;
+    const lugg = document.getElementById('luggage').value;
+    const flight = document.getElementById('flightNo').value || (currentLang === 'ar' ? 'غير محدد' : 'N/A');
+
+    let dateTimeStr = '';
+    let arDateTimeStr = '';
+    if (pickupNow && pickupNow.checked) {
+      dateTimeStr = 'NOW (ASAP)';
+      arDateTimeStr = 'حالا (في أسرع وقت)';
+    } else {
+      dateTimeStr = `${pickupDate.value} at ${pickupTime.value}`;
+      arDateTimeStr = `${pickupDate.value} الساعة ${pickupTime.value}`;
+    }
+
+    let returnStr = '';
+    let arReturnStr = '';
+    let tripTypeVal = 'one_way';
+    document.querySelectorAll('input[name="trip_type"]').forEach(r => { if (r.checked) tripTypeVal = r.value; });
+    if (tripTypeVal === 'round_trip') {
+      const rDate = document.getElementById('returnDate').value;
+      const rTime = document.getElementById('returnTime').value || (currentLang === 'ar' ? 'أي وقت' : 'Any');
+      returnStr = `\n🔄 Return: ${rDate} at ${rTime}`;
+      arReturnStr = `\n🔄 العودة: ${rDate} الساعة ${rTime}`;
+    }
+
+    let message = '';
+    if (currentLang === 'ar') {
+      message = `*طلب حجز توصيلة جديد* 🚖
+🚗 السيارة: ${vehicle}
+🔄 نوع الرحلة: ${tripType}
+📍 من: ${pickup}
+📍 إلى: ${dropoff}
+📅 التاريخ والوقت: ${arDateTimeStr}${arReturnStr}
+👥 الركاب: ${pass}
+🧳 الحقائب: ${lugg}
+✈️ رقم الرحلة: ${flight}`;
+    } else {
+      message = `*New Transfer Booking* 🚖
+🚗 Vehicle: ${vehicle}
+🔄 Type: ${tripType}
+📍 From: ${pickup}
+📍 To: ${dropoff}
+📅 Date & Time: ${dateTimeStr}${returnStr}
+👥 Passengers: ${pass}
+🧳 Luggage: ${lugg}
+✈️ Flight No: ${flight}`;
+    }
+
+    const encodedMsg = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/201515682365?text=${encodedMsg}`;
+
+    // Redirect to WhatsApp
+    window.open(whatsappUrl, '_blank');
+
+    // Optionally change button text to indicate success
     const btn = form.querySelector('button[type="submit"]');
     const originalText = btn.innerHTML;
-    btn.innerHTML = '<span class="spinner"></span> Processing...';
-    btn.disabled = true;
-
-    setTimeout(() => {
-      form.innerHTML = `
-        <div class="booking-success">
-          <svg width="64" height="64" fill="none" stroke="var(--success)" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          <h3>${currentLang === 'ar' ? 'تم تأكيد طلبك بنجاح!' : 'Booking Requested Successfully!'}</h3>
-          <p>${currentLang === 'ar' ? 'الرقم المرجعي:' : 'Booking Reference:'} <strong>SHM-${Math.floor(Math.random() * 90000) + 10000}</strong></p>
-          <p>${currentLang === 'ar' ? 'سيقوم فريقنا بتأكيد حجزك عبر الواتساب أو الإيميل خلال 10 دقائق.' : 'Our team will confirm your booking via WhatsApp or Email within 10 minutes.'}</p>
-        </div>
-      `;
-    }, 1500);
+    btn.innerHTML = currentLang === 'ar' ? 'تم تحويلك للواتساب ✅' : 'Redirected to WhatsApp ✅';
+    setTimeout(() => { btn.innerHTML = originalText; }, 5000);
   });
 });

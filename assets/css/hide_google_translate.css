@@ -1,0 +1,21 @@
+
+/* ============================================================
+   HIDE GOOGLE TRANSLATE BANNER & TOOLTIPS
+   ============================================================ */
+body {
+    top: 0 !important;
+}
+.skiptranslate iframe,
+.goog-te-banner-frame,
+.goog-te-balloon-frame,
+#goog-gt-tt,
+.goog-tooltip {
+    display: none !important;
+    visibility: hidden !important;
+}
+/* Also disable the weird font color changes Google sometimes applies on hover */
+font {
+    background: transparent !important;
+    color: inherit !important;
+    box-shadow: none !important;
+}
